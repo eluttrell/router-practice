@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>My Family</title>
+    <script src="/angular.js"></script>
+    <script src="/angular-ui-router.js"></script>
+    <script>
+    var app = angular.module('family', ['ui.router']);
+    app.config(function($stateProvider, $urlRouterProvider) {
+      $stateProvider
+        .state({
+          name: 'family',
+          url: '/',
+          templateUrl: 'family.html'
+        })
+        .state({
+          name: 'margaret',
+          url: '/margaret',
+          templateUrl: 'margaret.html'
+        })
+        .state({
+          name: 'genevieve',
+          url: '/genevieve',
+          templateUrl: 'genevieve.html'
+        })
+        .state({
+          name: 'georgiana',
+          url: '/georgiana',
+          templateUrl: 'georgiana.html'
+        })
+        .state({
+          name: 'alice',
+          url: '/alice',
+          templateUrl: 'alice.html'
+        })
+        .state({
+          name: 'julian',
+          url: '/julian',
+          templateUrl: 'julian.html'
+        })
+        .state({
+          name: 'violet',
+          url: '/violet',
+          templateUrl: 'violet.html'
+        });
+        $urlRouterProvider.otherwise('/');
+    });
+    </script>
+    <style media="screen">
+    * {
+      color: black;
+    }
+    a:hover {
+      color: gray;
+    }
+    .active {
+      background-color: black;
+      color: white !important;
+    }
+    </style>
+  </head>
+  <body ng-app="family">
+    <nav>
+      <a ui-sref="family" ui-sref-active="active">Family</a>
+      <a ui-sref="margaret" ui-sref-active="active">Margaret</a>
+      <a ui-sref="alice" ui-sref-active="active">Alice</a>
+      <a ui-sref="julian" ui-sref-active="active">Julian</a>
+      <a ui-sref="violet" ui-sref-active="active">Violet</a>
+      <a ui-sref="genevieve" ui-sref-active="active">Genevieve</a>
+      <a ui-sref="georgiana" ui-sref-active="active">Georgiana</a>
+    </nav>
+    <ui-view></ui-view>
+  </body>
+</html>
