@@ -5,136 +5,36 @@
     <meta charset="utf-8">
     <title>Elijah's Route Wiki</title>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="master.css" media="screen" title="no title">
     <script src="../angular.js"></script>
     <script src="../angular-ui-router.js"></script>
-    <script>
-        var app = angular.module('wiki', ['ui.router']);
-
-        app.controller('HomeController', function($scope) {
-
-        })
-
-        app.controller('PageViewController', function($scope, $stateParams) {
-          $scope.pageName = $stateParams.page_name;
-        })
-
-        app.config(function($stateProvider, $urlRouterProvider) {
-            $stateProvider
-                .state({
-                    name: 'home',
-                    url: '/',
-                    templateUrl: 'home.html',
-                    controller: 'HomeController'
-                })
-                .state({
-                    name: 'page_view',
-                    url: '/{page_name}',
-                    templateUrl: 'page_view.html',
-                    controller: 'HomeController'
-
-                })
-                // .state({
-                //     name: 'page_edit',
-                //     url: '/{page_name}',
-                //     templateUrl: 'page_edit.html',
-                //     controller: 'HomeController'
-                // });
-
-            $urlRouterProvider.otherwise('/');
-        });
-    </script>
-    <style media="screen">
-        * {
-            color: black;
-            box-sizing: border-box;
-        }
-
-        .Img {
-          padding: 50px;
-        }
-
-        #star-five {
-            margin: 50px 0;
-            position: relative;
-            display: block;
-            color: black;
-            width: 0px;
-            height: 0px;
-            border-right: 100px solid transparent;
-            border-bottom: 70px solid black;
-            border-left: 100px solid transparent;
-            -moz-transform: rotate(35deg);
-            -webkit-transform: rotate(35deg);
-            -ms-transform: rotate(35deg);
-            -o-transform: rotate(35deg);
-        }
-
-        #star-five:before {
-            border-bottom: 80px solid black;
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            position: absolute;
-            height: 0;
-            width: 0;
-            top: -45px;
-            left: -65px;
-            display: block;
-            content: '';
-            -webkit-transform: rotate(-35deg);
-            -moz-transform: rotate(-35deg);
-            -ms-transform: rotate(-35deg);
-            -o-transform: rotate(-35deg);
-        }
-
-        #star-five:after {
-            position: absolute;
-            display: block;
-            color: black;
-            top: 3px;
-            left: -105px;
-            width: 0px;
-            height: 0px;
-            border-right: 100px solid transparent;
-            border-bottom: 70px solid black;
-            border-left: 100px solid transparent;
-            -webkit-transform: rotate(-70deg);
-            -moz-transform: rotate(-70deg);
-            -ms-transform: rotate(-70deg);
-            -o-transform: rotate(-70deg);
-            content: '';
-        }
-
-        a:hover {
-            color: gray;
-        }
-
-        .active {
-            background-color: black;
-            color: white;
-        }
-    </style>
+    <script src="uirouter.js" charset="utf-8"></script>
 </head>
 
 <body>
     <div ng-app="wiki">
-      <div class="row">
-        <div class="col-md-2 mainImg"><span id="star-five"></span>
-        </div>
-        <div class="col-md-10">
-          <div class="col-md-12 ">
-            <nav>
-                <a ui-sref="home" ui-sref-active="active">Home</a>
-                <a ui-sref="page_view({page_name: 'Python'})" ui-sref-active="active">Go to Python!</a>
-            </nav>
-          </div>
-          <div class="col-md-12">
-            <ui-view></ui-view>
-          </div>
+        <div class="row">
+            <div class="col-md-2 col-sm-2 col-xs-12 mainImg"><span id="star-five"></span>
+            </div>
+            <div class="col-md-10">
+                <div class="col-md-12 ">
+                    <nav>
+                        <a ui-sref="home" ui-sref-active="active">Home</a>
+                        <a ui-sref="page_view({page_name: 'Python'})" ui-sref-active="active">Python</a>
+                        <a ui-sref="page_view({page_name: 'HTML'})" ui-sref-active="active">HTML</a>
+                        <!-- <form ng-submit="search()" ng-controller="searchController">
+                          <input type="text" name="search" ng-model="text" placeholder="Search">
+                        </form> -->
+                    </nav>
+                </div>
+                <div class="col-md-12">
+                    <ui-view></ui-view>
+                </div>
 
+            </div>
+            <br>
+            <hr>
         </div>
-        <br>
-        <hr>
-      </div>
 
 
     </div>

@@ -1,0 +1,11 @@
+<h1>{{page_name}}</h1>
+<hr>
+<p ng-show="page">{{page.content}}</p>
+<div ng-hide="page">
+  <p>
+    This page does not exist yet!
+  </p>
+  <p>
+    Please click <a ui-sref="edit_page({page_name})" ui-sref-active="active">here</a> to create it.
+  </p>
+</div>

@@ -1,0 +1,9 @@
+<h1>{{page_name}}</h1>
+<hr>
+<form ng-submit="submit()">
+  Please enter content for this page:
+  <br>
+  <textarea ng-model="page.content" name="text" rows="8" cols="40" placeholder="Content..."></textarea>
+  <br>
+  <a ui-sref="page_view({page_name: '{{page_name}}'})" ui-sref-active="active"><input type="submit"></input></a>
+</form>
