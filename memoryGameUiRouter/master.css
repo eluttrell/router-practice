@@ -1,0 +1,49 @@
+body {
+  background-color: darkslategray !important;
+}
+
+.home-page {
+  margin-top: 20px;
+}
+
+.home-btn {
+  margin-top: 20px;
+}
+
+.centered {
+  text-align: center;
+}
+
+.board-setup {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.background {
+  background: lightslategray;
+  margin: 12px auto;
+  width: 180px;
+  height: 180px;
+  border-radius: 5px;
+}
+
+.front {
+  margin: 12px auto;
+  width: 180px;
+  height: 180px;
+}
+
+.front-pos {
+  position: relative;
+  top: 62px;
+  left: 62px;
+  margin: 12px auto;
+  width: 180px;
+  height: 180px;
+}
+
+.back-pos {
+  position: relative;
+  top: 62px;
+  left: 62px;
+}

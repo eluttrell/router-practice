@@ -1,0 +1,14 @@
+<div class="container">
+  <button type="button" class="btn home-btn" ui-sref="home">Home</button>
+    <h1 class="centered">How Much Can You Remember?</h1>
+    <div class="row">
+        <div ng-repeat="card in cards track by $index" class="col-md-3 col-xs-6">
+          <div class="front" ng-show="card.open">
+            <img class="fron-pos" ng-show="card.open" ng-src="{{card.image}}" id={{card.randID}} width="180px"/>
+          </div>
+          <div class="background" ng-show="!card.open">
+            <img class="back-pos" ng-show="!card.open" ng-click="flip($index)" ng-src="{{card.back}}" width="60px"/>
+          </div>
+        </div>
+    </div>
+</div>
